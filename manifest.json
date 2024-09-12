@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Your Extension Name",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage",
+   "webRequest"
+  ],
+  "host_permissions": [
+    "https://dashboard.razorpay.com/*",
+    "https://uat.fealtyx.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Start Automation"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://uat.fealtyx.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
